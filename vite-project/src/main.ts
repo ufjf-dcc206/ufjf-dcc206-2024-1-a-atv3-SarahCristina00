@@ -19,7 +19,7 @@ const getRandomPokemons = async (count: number): Promise<Pokemon[]> => {
     const randomIds = new Set<number>();
 
     while (randomIds.size < count) {
-        const randomId = Math.floor(Math.random() * 100) + 1;
+        const randomId = Math.floor(Math.random() * 1000) + 1;
         randomIds.add(randomId);
     }
 
