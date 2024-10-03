@@ -2,7 +2,7 @@ export type Pokemon = {
     id: number;
     nome: string;
     tipo: string;
-    imagem: string;
+    imagem: string; 
 };
 
 export default class Carta extends HTMLElement {
