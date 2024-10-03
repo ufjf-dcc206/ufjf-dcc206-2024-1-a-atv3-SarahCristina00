@@ -10,7 +10,7 @@ const getRandomPokemon = async (id: number): Promise<Pokemon> => {
         id: json.id,
         nome: json.name,
         tipo: json.types[0].type.name,
-        imagem: json.sprites.front_default // Adicionando a imagem
+        imagem: json.sprites.front_default
     };
 };
 
@@ -18,7 +18,6 @@ const getRandomPokemons = async (count: number): Promise<Pokemon[]> => {
     const pokemons: Pokemon[] = [];
     const randomIds = new Set<number>();
 
-    // Gera IDs únicos aleatórios de 1 a 898 (total de Pokémon na API)
     while (randomIds.size < count) {
         const randomId = Math.floor(Math.random() * 100) + 1;
         randomIds.add(randomId);
