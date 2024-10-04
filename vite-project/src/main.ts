@@ -1,5 +1,5 @@
 import Carta, { Pokemon } from './carta.ts';
-import './style.css';
+//import './style.css';
 customElements.define("detalhes-pokemon", Carta);
 
 const getRandomPokemon = async (id: number): Promise<Pokemon> => {
@@ -14,16 +14,16 @@ const getRandomPokemon = async (id: number): Promise<Pokemon> => {
     };
 };
 
-const getRandomPokemons = async (count: number): Promise<Pokemon[]> => {
+const getRandomPokemons = async (i: number): Promise<Pokemon[]> => {
     const pokemons: Pokemon[] = [];
-    const randomIds = new Set<number>();
+    const poksAl = new Set<number>();
 
-    while (randomIds.size < count) {
-        const randomId = Math.floor(Math.random() * 1000) + 1;
-        randomIds.add(randomId);
+    while (poksAl.size < i) {
+        const idAl = Math.floor(Math.random() * 1000) + 1;
+        poksAl.add(idAl);
     }
 
-    for (const id of randomIds) {
+    for (const id of poksAl) {
         const pokemon = await getRandomPokemon(id);
         pokemons.push(pokemon);
     }
